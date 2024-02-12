@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Color Assigner Extension",
+    "version": "1.0",
+    "description": "Assign different colors to HTML elements on a page",
+    "permissions": [
+      "activeTab"
+    ],
+    "action": {
+      "default_icon": "public/icon.png",
+      "default_popup": "/public/popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["/src/content/contentScript.js"]
+      }
+    ],
+    "icons": {
+      "16": "/public/icon.png",
+      "48": "public/icon.png",
+      "128": "public/icon.png"
+    }
+  }
+  

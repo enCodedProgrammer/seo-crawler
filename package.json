@@ -1,0 +1,22 @@
+{
+  "name": "seo-crawler",
+  "version": "1.0.0",
+  "description": "An chrome extension for crawling website to check for SEO compliance",
+  "main": "contentScript.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enCodedProgrammer/seo-crawler.git"
+  },
+  "keywords": [
+    "seo"
+  ],
+  "author": "Israel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enCodedProgrammer/seo-crawler/issues"
+  },
+  "homepage": "https://github.com/enCodedProgrammer/seo-crawler#readme"
+}
