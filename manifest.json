@@ -3,9 +3,6 @@
     "name": "Color Assigner Extension",
     "version": "1.0",
     "description": "Assign different colors to HTML elements on a page",
-    "permissions": [
-      "activeTab"
-    ],
     "action": {
       "default_icon": "public/icon.png",
       "default_popup": "/public/popup.html"
@@ -20,6 +17,10 @@
       "16": "/public/icon.png",
       "48": "public/icon.png",
       "128": "public/icon.png"
+    },
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+      "service_worker": "/src/background/background.js"
     }
   }
   

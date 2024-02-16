@@ -7,8 +7,115 @@
   <title>Color Assigner Extension</title>
 </head>
 <body>
-    <button id="assignColorsBtn">Assign Colors</button>
-    <div id="message"></div>
+  <div class="container">
+
+    <div class="navigation">
+      <button class="nav summary_btn" id="summary_btn"> Summary</button>
+      <button class="nav elements_btn" id="elements_btn"> Headers</button>
+      <button class="nav analytics_btn" id="analytics_btn"> Analytics</button>
+      <button class="nav data_btn" id="data_btn"> Data</button>
+      <div class="toggle">
+        <p>Highlight headers on page</p>    
+      <label class="switch">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <span class="slider round"></span>
+          </label>
+      </div>
+  
+    </div>
+
+    <div class="body_container">
+      <div class="summary" id="summary">
+          <!--<button id="get_summary"></button> -->
+          <h2 class="message">Summary</h2 >
+        <div class="summary_table">
+          <div class="summary_left">
+            <p class="message">Title: </p>
+          </div>
+          <div class="summary_right">
+            <p class="message" id="title"></p>
+          </div>
+        </div>
+        
+        <div class="summary_table">          
+          <div class="summary_left">
+            <p class="message">Description: </p>
+          </div>
+          <div class="summary_right">
+            <p class="message" id="description"></p>
+          </div>
+        </div>
+
+        <div class="summary_table">
+          <div class="summary_left">
+            <p class="message">Keyword: </p>
+          </div>
+          <div class="summary_right">
+            <p class="message" id="keyword"></p>
+          </div>
+          </div>
+        
+      <div id="header_table" class="header_table">
+        <div class="heading">
+          <p class="heading">H1</p>
+          <p class="heading">H2</p>
+          <p class="heading">H3</p>
+          <p class="heading">H4</p>
+          <p class="heading">H5</p>
+          <p class="heading">H6</p>
+        </div>
+      
+        <div class="value">
+          <p id="h1_value" class="h1_value heading">H1</p>
+          <p id="h2_value" class="h2_value heading">H2</p>
+          <p id="h3_value" class="h3_value heading">H3</p>
+          <p id="h4_value" class="h4_value heading">H4</p>
+          <p id="h5_value" class="h5_value heading">H5</p>
+          <p id="h6_value" class="h6_value heading">H6</p>
+      
+        </div>
+      </div>
+    </div>      
+      
+      
+    <div class="elements" id="elements">
+      <button id="assignColorsBtn" style="display: none;">Get Headers</button>
+      <div class="message">All headers in order of their appearance in HTML.</div>
+      <div class="message" id="header_message"></div>
+
+      <div id="header_table" class="header_table">
+        <div class="heading">
+          <p class="heading">H1</p>
+          <p class="heading">H2</p>
+          <p class="heading">H3</p>
+          <p class="heading">H4</p>
+          <p class="heading">H5</p>
+          <p class="heading">H6</p>
+        </div>
+        <div class="value">
+          <p id="h1_value" class="h1_value heading">H1</p>
+          <p id="h2_value" class="h2_value heading">H2</p>
+          <p id="h3_value" class="h3_value heading">H3</p>
+          <p id="h4_value" class="h4_value heading">H4</p>
+          <p id="h5_value" class="h5_value heading">H5</p>
+          <p id="h6_value" class="h6_value heading">H6</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="analytics" id="analytics">
+      <!--<button id="assignAnalyticsBtn">Get Analytics</button> -->
+      <div class="message">Analytics</div>
+    </div>
+
+    <div class="data" id="data">
+      <!--<button id="assignDataBtn">Get Data</button> -->
+      <div class="message">Data</div>
+    </div>
+    </div>
+  </div>
+
 <script src="popup.js"></script>
 
 </body>
