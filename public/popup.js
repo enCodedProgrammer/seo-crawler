@@ -219,6 +219,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const h4 = document.querySelectorAll('.h4_value');
     const h5 = document.querySelectorAll('.h5_value');
     const h6 = document.querySelectorAll('.h6_value');
+    const images = document.getElementById('images');
+    const imageSrc = document.querySelectorAll('.images_src');
+    const imageAlt = document.querySelectorAll('.images_alt');
     const title = document.getElementById('title');
     const description = document.getElementById('description');
     const keyword = document.getElementById('keyword');
@@ -242,12 +245,12 @@ document.addEventListener('DOMContentLoaded', function () {
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
        chrome.tabs.sendMessage(tabs[0].id, { action: 'assignColorsToElements', check: event.target.checked }, function (response) {
       
-        console.log("res", response);  
+        //console.log("res", response);  
           if (chrome.runtime.lastError) {
-            setMessage('Error assigning colors. Please try again.');
+            //setMessage('Error assigning colors. Please try again.');
           } else {
-            console.log("response", response);
-            setMessage(response);
+            //console.log("response", response);
+            //setMessage(response);
           }
         });
       });
@@ -277,6 +280,27 @@ document.addEventListener('DOMContentLoaded', function () {
       h6.forEach(h6=>{
         h6.innerHTML = response.h6
       })
+      console.log("ressssspoonse", response.imgSrc)
+      for (let i=0; i<response.imgSrc.length; i++) {
+      console.log(response.imgSrc[i])
+      const node = document.createElement('a')
+      const nodeImage = document.createElement("img")
+      node.href = response.imgSrc[i]
+      node.target = "_blank"
+      node.style.display = "flex";
+      node.style.flexDirection = "row";
+      node.style.marginBottom = "20px";
+      node.style.alignItems = "center"
+      nodeImage.src = response.imgSrc[i];
+      nodeImage.style.width = "40px";
+      nodeImage.style.height = "auto";
+      nodeImage.style.marginRight = "15px";
+      nodeImage.style.objectFit = "contain"
+      const innertext = document.createTextNode(response.imgSrc[i])
+      node.appendChild(nodeImage)
+      node.appendChild(innertext);
+        images.appendChild(node);
+      }
       title.innerHTML += response.title
       description.innerHTML += response.description ? response.description : "No description found"
       keyword.innerHTML += response.keyword ? response.keyword : "No keyword found"
